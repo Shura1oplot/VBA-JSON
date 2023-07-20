@@ -46,7 +46,11 @@ Attribute VB_Name = "JsonConverter"
 Option Explicit
 Option Private Module
 
-#Const UseScriptingDictionaryIfAvailable = True
+' UseScriptingDictionary
+' 0 = CreateObject("Scripting.Dictionary")
+' 1 = Dictionary (Excel, Powerpoint)
+' 2 = Scripting.Dictionary (Word)
+#Const UseScriptingDictionary = 1
 
 ' === VBA-UTC Headers
 #If Mac Then
@@ -502,9 +506,12 @@ End Function
 ' ============================================= '
 ' Private Functions
 ' ============================================= '
-#If Mac Or Not UseScriptingDictionaryIfAvailable Then
+#If Mac Or UseScriptingDictionary = 1 Then
 Private Function json_ParseObject(json_String As String, ByRef json_Index As Long) As Dictionary
     Set json_ParseObject = New Dictionary
+#ElseIf UseScriptingDictionary = 2
+Private Function json_ParseObject(json_String As String, ByRef json_Index As Long) As Scripting.Dictionary
+    Set json_ParseObject = New Scripting.Dictionary
 #Else
 Private Function json_ParseObject(json_String As String, ByRef json_Index As Long) As Object
     Set json_ParseObject = CreateObject("Scripting.Dictionary")

@@ -4,7 +4,7 @@ JSON conversion and parsing for VBA (Windows and Mac Excel, Access, and other Of
 It grew out of the excellent project [vba-json](https://code.google.com/p/vba-json/),
 with additions and improvements made to resolve bugs and improve performance (as part of [VBA-Web](https://github.com/VBA-tools/VBA-Web)).
 
-Tested in Windows Excel 2013 and Excel for Mac 2011, but should apply to 2007+.
+Tested in Windows Office 365, Windows Excel 2013 and Excel for Mac 2011, but should apply to 2007+.
 
 - For Windows-only support, include a reference to "Microsoft Scripting Runtime"
 - For Mac and Windows support, include [VBA-Dictionary](https://github.com/VBA-tools/VBA-Dictionary)
@@ -102,6 +102,7 @@ JsonConverter.JsonOptions.EscapeSolidus = True
 3. Add `Dictionary` reference/class
    - For Windows-only, include a reference to "Microsoft Scripting Runtime"
    - For Windows and Mac, include [VBA-Dictionary](https://github.com/VBA-tools/VBA-Dictionary)
+4. If Word 365, change `#Const UseScriptingDictionary = 1` to `#Const UseScriptingDictionary = 2`
 
 ## Resources
 
