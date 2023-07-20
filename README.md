@@ -103,6 +103,7 @@ JsonConverter.JsonOptions.EscapeSolidus = True
    - For Windows-only, include a reference to "Microsoft Scripting Runtime"
    - For Windows and Mac, include [VBA-Dictionary](https://github.com/VBA-tools/VBA-Dictionary)
 4. If Word 365, change `#Const UseScriptingDictionary = 1` to `#Const UseScriptingDictionary = 2`
+5. Comment `Attribute VB_Name = "JsonConverter"` if it causes compiler error (probably on Office 365)
 
 ## Resources
 
