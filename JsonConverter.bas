@@ -509,7 +509,7 @@ End Function
 #If Mac Or UseScriptingDictionary = 1 Then
 Private Function json_ParseObject(json_String As String, ByRef json_Index As Long) As Dictionary
     Set json_ParseObject = New Dictionary
-#ElseIf UseScriptingDictionary = 2
+#ElseIf UseScriptingDictionary = 2 Then
 Private Function json_ParseObject(json_String As String, ByRef json_Index As Long) As Scripting.Dictionary
     Set json_ParseObject = New Scripting.Dictionary
 #Else
